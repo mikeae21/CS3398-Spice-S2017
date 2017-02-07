@@ -1,4 +1,7 @@
 # CS3398-Spice-S2017
 testing
 
-Jean-Michel test thing
+
+
+testing 2.0:Class edition
+ myfeature_develop
