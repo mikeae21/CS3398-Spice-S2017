@@ -12,7 +12,7 @@
 	})
 	$('#image_file_input').on('change',function(e){
 		url=$(this).val();
-		if (url.match(/\.(jpeg|jpg|gif|png)$/) != null)
+		if (url.match(/\.(jpeg|jpg|gif|png|JPEG|JPG|GIF|PNG)$/) != null)
 			$('#uploaded_image').attr('src', URL.createObjectURL(event.target.files[0]));
 	})
 })(jQuery);
