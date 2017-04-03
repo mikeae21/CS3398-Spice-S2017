@@ -4,10 +4,17 @@ var Swatch = require('./swatch')
 class PaletteManager extends React.Component {
 	constructor(props){
 		super(props)
+		this.nextID = 0;
+		this.palette = {}
+		while (this.nextID < 5)
+		{
+			// generate random test colors
+			this.addSwatch('#' + (Math.random()*0xFFFFFF<<0).toString(16))
+		}
 	}
 
 	addSwatch(color){
-
+		this.palette[this.nextID++] = color
 	}
 
 	removeSwatch(id){
@@ -26,14 +33,17 @@ class PaletteManager extends React.Component {
 	}
 
 	render(){
-
+	// 	var paletteLength = Object.keys(this.palette).length
+	// 	var width = "calc(" + (100/paletteLength) + "% - 5px)"
 		return(
-			<ul id="palette">
-				<Swatch color="#00adef" />
-				<Swatch color="#00efad" />
-				<Swatch color="#ab8ef1" />
-				<Swatch color="#f0000d" />
-			</ul>
+			<div id="palette">
+				{
+					Object.keys(this.palette).map(function(key){
+						return <Swatch className="swatch" id={key} color={this.palette[key]} />
+
+					}.bind(this))
+				}
+			</div>
 		);
 	}
 }

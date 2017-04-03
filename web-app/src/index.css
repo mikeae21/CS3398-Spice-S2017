@@ -8,21 +8,27 @@ body {
 #palette {
 	position:absolute;
 	bottom:0;
-	width:100%;
 	height:50px;
+	width:100%;
 	margin:0;
-	padding:5px;
+	padding:0;
 	background:#222;
+  display: flex;
+
 }
 
 .swatch {
-	display:inline-block;
 	position:relative;
-	width: calc(25% - 12px);
 	height: 40px;
-	margin: 5px;
+	min-width:40px;
+	flex-grow:1;
+	margin: 5px 0px 5px 5px;
+}
+.swatch:last-child{
+	margin-right:5px;
 }
 
+.swatch:not(:hover) .swatchText,
 .swatch:not(:hover) .closeButton{
 	display:none;
 }

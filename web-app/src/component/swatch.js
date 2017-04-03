@@ -17,6 +17,7 @@ class Swatch extends React.Component {
 
         return (
             <div className="swatch" style={divStyle}>
+                &nbsp;
                 <span className="swatchText"> {this.props['color']} </span>
                 <button className="closeButton" />
             </div>
