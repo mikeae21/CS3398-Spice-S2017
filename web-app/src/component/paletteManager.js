@@ -5,20 +5,29 @@ class PaletteManager extends React.Component {
 	constructor(props){
 		super(props)
 		this.nextID = 0;
+
+		//The state should never be directly modified, so we update our values in 
+		// this.palette and then update the state when needed
 		this.palette = {}
-		while (this.nextID < 5)
-		{
-			// generate random test colors
+		this.setState({ palette:this.palette })
+
+		// generate random test colors
+		while (this.nextID < Math.floor(Math.random()*3+4))
 			this.addSwatch('#' + (Math.random()*0xFFFFFF<<0).toString(16))
-		}
 	}
 
 	addSwatch(color){
-		this.palette[this.nextID++] = color
+		this.nextID++
+
+		this.palette[this.nextID] = color
+		this.setState({ palette: this.palette })
+
+		console.log(this.getPaletteInfo());
 	}
 
-	removeSwatch(id){
-
+	removeSwatch(key){
+		delete this.palette[key];
+		this.setState({ palette:this.palette })
 	}
 
 	// This function manages the drag and drop updating of a swatch.
@@ -29,18 +38,15 @@ class PaletteManager extends React.Component {
 	}
 
 	getPaletteInfo(){
-
+		return Object.values(this.palette).join(', ')
 	}
 
 	render(){
-	// 	var paletteLength = Object.keys(this.palette).length
-	// 	var width = "calc(" + (100/paletteLength) + "% - 5px)"
 		return(
 			<div id="palette">
 				{
 					Object.keys(this.palette).map(function(key){
-						return <Swatch className="swatch" id={key} color={this.palette[key]} />
-
+						return <Swatch className="swatch" deleteFunc={this.removeSwatch.bind(this, key)} id={key} color={this.palette[key]} />
 					}.bind(this))
 				}
 			</div>

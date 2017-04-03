@@ -16,10 +16,10 @@ class Swatch extends React.Component {
         };
 
         return (
-            <div className="swatch" style={divStyle}>
+            <div className="swatch" id={'swatch-'+this.props.id} style={divStyle}>
                 &nbsp;
                 <span className="swatchText"> {this.props['color']} </span>
-                <button className="closeButton" />
+                <button id={this.props.id} onClick={this.props.deleteFunc} className="closeButton" />
             </div>
         );
     }
