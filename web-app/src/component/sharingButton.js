@@ -1,5 +1,5 @@
 var React = require('react');
-var CopyToClipboard = require('react-copy-to-clipboard');
+//var CopyToClipboard = require('react-copy-to-clipboard');
 
 class SharingButton extends React.Component{
 	constructor(props){
@@ -14,7 +14,7 @@ class SharingButton extends React.Component{
 		return(
 			<div>
 				<button onClick={this.copy.bind(this)} >Copy</button>
-     		 </div>
+     		 	</div>
 		);
 	}
 }
