@@ -1,24 +1,22 @@
 var React = require('react');
-var PaletteManager = require('./paletteManager')
+//var CopyToClipboard = require('react-copy-to-clipboard');
 
-
-class SharingButton extends React.component{
+class SharingButton extends React.Component{
 	constructor(props){
-		super(props)
-		console.log(this.props.paletteManager);
+		super(props);
 	}
 
-	copyHexList(){
-
+	copy(){
+		window.prompt("Copy to clipboard", Object.values(this.props.app.palette).join(', '))
 	}
 
 	render(){
 		return(
 			<div>
-			</div>
+				<button onClick={this.copy.bind(this)} >Copy</button>
+     		 	</div>
 		);
 	}
-
 }
 
 module.exports = SharingButton;
