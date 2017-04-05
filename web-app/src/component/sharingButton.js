@@ -1,5 +1,5 @@
 var React = require('react');
-var CopyToClipboard = require('react-copy-to-clipboard');
+//var CopyToClipboard = require('react-copy-to-clipboard');
 
 class SharingButton extends React.Component{
 	constructor(props){
