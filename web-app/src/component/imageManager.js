@@ -1,3 +1,5 @@
+import lake from './lake.jpg';
+
 var React = require('react');
 
 class ImageManager extends React.Component {
@@ -14,27 +16,13 @@ class ImageManager extends React.Component {
     }
 
     render(){
-    let {mode, src, height, width, style, ...props} = this.props;
-    let modes = {
-      'fill': 'cover',
-      'fit': 'contain'
-    };
-    let size = modes[mode] || 'contain';
-
-    let defaults = {
-      height: height || 100,
-      width: width || 100,
-      backgroundImage: src || `./lake.jpg`,
-      backgroundColor: 'teal'
-    };
-
-    let important = {
-      backgroundSize: size,
-      backgroundPosition: 'center center',
-      backgroundRepeat: 'no-repeat'
-    };
-
-        return <div {...props} style={{...defaults, ...style, ...important}} />
+        return (
+            //<div id='img'>
+              //<canvas ref="myCanvas">
+                <img src={lake} width={500} height={400} mode='fit'/>
+              //</canvas>
+            //</div>
+        );
     }
 }
 

@@ -17,7 +17,7 @@ class ImageManager extends React.Component {
         return (
             //<div id='img'>
               //<canvas ref="myCanvas">
-                <img src="./lake.jpg" width={500} height={300} mode='fit'/>
+                <img src="./lake.jpg" width={500} height={400} mode='fit'/>
               //</canvas>
             //</div>
         );
