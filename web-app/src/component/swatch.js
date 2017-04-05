@@ -4,7 +4,7 @@ class Swatch extends React.Component {
     constructor(props){
         super(props)
         if(!/^#[0-9a-f]{3,6}$/i.test(this.props['color'])){
-           throw('Invalid color for Swatch');
+           throw(new Error('Invalid color for Swatch'));
         }
     }
 

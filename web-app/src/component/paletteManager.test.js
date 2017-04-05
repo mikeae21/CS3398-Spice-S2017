@@ -8,6 +8,15 @@ it('addSwatch throws error if invalid key', () => {
 	}).toThrow('Invalid color for addSwatch')
 });
 
+// it('addSwatch should successufully add a new swatch to the palette', () => {
+// 	expect(() => {
+// 		var mgr = shallow(<PaletteManager />).instance()
+// 		var oldSize = mgr.getPaletteLength();
+// 		mgr.addSwatch('#FFFFFF');
+
+// 	})
+// })
+
 it('removeSwatch throws error if invalid key', () => {
 	expect(() => {
 		shallow(<PaletteManager />).instance().removeSwatch('******')

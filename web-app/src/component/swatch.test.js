@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 it('constructor throws error if invalid arg', () => {
     expect(() => {
                 shallow(<Swatch color = '*$^*@^#' />) 
-            }).toThrow("Invalid color for Swatch");
+            }).toThrow(new Error("Invalid color for Swatch"));
 });
 
 
