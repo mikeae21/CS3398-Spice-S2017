@@ -7,14 +7,14 @@ class SharingButton extends React.Component{
 	}
 
 	copy(){
-		console.log(Object.values(this.props.app.palette).join(', '));
+		window.prompt("Copy to clipboard", Object.values(this.props.app.palette).join(', '))
 	}
 
 	render(){
 		return(
 			<div>
 				<button onClick={this.copy.bind(this)} >Copy</button>
-      </div>
+     		 </div>
 		);
 	}
 }
